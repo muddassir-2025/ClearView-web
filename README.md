@@ -45,9 +45,12 @@ python tools/make-og.py    # needs Pillow + numpy, run from the project root
 ## Layout of the code
 
 ```
-index.html                 meta tags, Open Graph, fonts, favicon link
+index.html                 meta tags, Open Graph, fonts, favicon links
 public/images/*.jpeg       the app screenshots (optimised, long edge 1000px)
-public/favicon.svg         teal lens mark
+public/logo.png            the app mark, on its white tile (header + footer)
+public/favicon-32.png      the same mark, corners rounded, for the browser tab
+public/apple-touch-icon.png
+tools/make-logo.py         generates the three logo assets from temp/1.jpeg
 public/og.png              1200x630 social share card
 src/index.css              the only stylesheet — tokens, phone frames, glow,
                            reveal animation, lightbox
@@ -72,11 +75,15 @@ reference its key from a section's `cluster` and from `GALLERY`.
 
 ## Notes
 
-- **One upload did not make it into the gallery.** `temp/1.jpeg`, the first file
-  uploaded, is a 1080x1022 near-white image with a small centred red/black mark and
-  no app UI or readable text — it looks like a failed export rather than a ClearView
-  screen, so it is not included. The gallery renders `{items.length}` screens, so
-  re-adding a replacement is a one-line change in `SCREENS` + `GALLERY`.
+- **`temp/1.jpeg` is the app logo, not a screen.** It is a heart split black and
+  red on a white background, so it is used as the brand mark rather than as a
+  gallery screenshot: it appears in the header, in the footer, as the favicon and
+  in the share card. `tools/make-logo.py` rebuilds those assets from it — rerun it
+  if the logo is ever replaced. As delivered it keeps its white background:
+  `public/logo.png` is the heart centred on a 300x300 white tile, and the header
+  and footer round the corners with CSS.
+- The gallery holds the 15 screens, so it renders `{items.length}` of them. Adding
+  one back is a one-line change in `SCREENS` + `GALLERY`.
 - The Quran section has two screens (reminder + surah list). There is no separate
   full-page reading-view screenshot in the upload, so the reminder screen — which
   already shows a verse with its ayah position and copy controls — carries that part.

@@ -1,5 +1,4 @@
-import { PLAY_URL } from '../data/content.js';
-import { LensMark } from './icons.jsx';
+import { LOGO, PLAY_URL } from '../data/content.js';
 
 /** Section 10 — footer. */
 export default function Footer() {
@@ -8,9 +7,13 @@ export default function Footer() {
       <div className="wrap flex flex-col gap-8 py-12 md:flex-row md:items-start md:justify-between">
         <div>
           <div className="flex items-center gap-2.5 font-display text-base font-bold tracking-tight">
-            <span className="text-teal">
-              <LensMark size={18} />
-            </span>
+            <img
+              src={LOGO.src}
+              width="22"
+              height="22"
+              alt=""
+              className="h-[22px] w-[22px] shrink-0 rounded-[7px] ring-1 ring-white/10"
+            />
             ClearView
           </div>
           <p className="mt-3 max-w-xs text-sm text-dim">

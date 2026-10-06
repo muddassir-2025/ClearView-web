@@ -6,6 +6,7 @@
  *
  * Screenshot files live in /public/images and are served from /images/*.
  * Each screen was assigned to a section by what it actually shows.
+ * The app logo (public/logo.png) is exported separately as LOGO.
  */
 
 /** Google Play listing. */
@@ -19,6 +20,15 @@ export const PLAY_URL =
  * `document.baseURI` keeps them correct at a domain root and in a subfolder.
  */
 const img = (file) => new URL(`images/${file}`, document.baseURI).href;
+
+/** Resolve a file that sits at the site root rather than under /images. */
+const asset = (file) => new URL(file, document.baseURI).href;
+
+/**
+ * The app mark — a heart split black/red on its white tile.
+ * Decorative, because the wordmark text sits right next to it.
+ */
+export const LOGO = { src: asset('logo.png') };
 
 /**
  * Every uploaded screenshot, keyed by a readable slug.

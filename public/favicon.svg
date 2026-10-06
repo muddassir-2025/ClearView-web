@@ -1,7 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
-  <!-- ClearView mark: a restrained teal lens on the app's near-black background -->
-  <rect width="64" height="64" rx="16" fill="#0B1214" />
-  <circle cx="32" cy="32" r="15.5" fill="none" stroke="#00E0D2" stroke-width="3.5" />
-  <circle cx="32" cy="32" r="6" fill="#00E0D2" />
-  <path d="M32 9.5v5M32 49.5v5" stroke="#00E0D2" stroke-width="3.5" stroke-linecap="round" opacity=".55" />
-</svg>

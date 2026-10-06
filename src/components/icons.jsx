@@ -2,7 +2,8 @@
  * Inline SVG icons.
  *
  * Deliberately no icon font and no emoji — just the two marks the page needs,
- * drawn in currentColor so they inherit the teal accent.
+ * drawn in currentColor so they inherit the teal accent. The brand mark itself
+ * is the real app logo (public/logo.png), not a drawn stand-in.
  */
 
 /** Google Play triangle, for the store buttons. */
@@ -40,23 +41,6 @@ export function ChevronIcon({ dir = 'right', size = 18 }) {
       style={{ transform: `rotate(${rotation}deg)` }}
     >
       <path d="m6 9 6 6 6-6" />
-    </svg>
-  );
-}
-
-/** ClearView wordmark: a teal lens, matching the favicon. */
-export function LensMark({ size = 22 }) {
-  return (
-    <svg
-      viewBox="0 0 64 64"
-      width={size}
-      height={size}
-      aria-hidden="true"
-      focusable="false"
-      className="shrink-0"
-    >
-      <circle cx="32" cy="32" r="20" fill="none" stroke="currentColor" strokeWidth="6" />
-      <circle cx="32" cy="32" r="8" fill="currentColor" />
     </svg>
   );
 }

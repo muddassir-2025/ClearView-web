@@ -120,9 +120,10 @@ canvas.alpha_composite(phone('public/images/media-feed.jpeg', (250, 500), 26, -5
 draw = ImageDraw.Draw(canvas)
 
 # --- Wordmark ---------------------------------------------------------------
-draw.ellipse([70, 66, 100, 96], outline=TEAL, width=4)
-draw.ellipse([79, 75, 91, 87], fill=TEAL)
-draw.text((114, 63), 'ClearView', font=font('Montserrat.ttf', 30, 700), fill=MIST)
+# The real app mark, on its white tile, beside the name.
+logo = Image.open('public/logo.png').convert('RGBA').resize((46, 46), Image.LANCZOS)
+canvas.alpha_composite(logo, (70, 58))
+draw.text((130, 63), 'ClearView', font=font('Montserrat.ttf', 30, 700), fill=MIST)
 
 # --- Headline ---------------------------------------------------------------
 headline = font('Montserrat.ttf', 60, 800)

@@ -1,5 +1,5 @@
-import { PLAY_URL } from '../data/content.js';
-import { LensMark, PlayIcon } from './icons.jsx';
+import { LOGO, PLAY_URL } from '../data/content.js';
+import { PlayIcon } from './icons.jsx';
 
 /** Sticky header: wordmark on the left, a small download button on the right. */
 export default function Header() {
@@ -10,9 +10,14 @@ export default function Header() {
           href="#top"
           className="flex items-center gap-2.5 font-display text-[1.05rem] font-bold tracking-tight text-mist"
         >
-          <span className="text-teal">
-            <LensMark size={20} />
-          </span>
+          {/* Decorative: the wordmark text next to it carries the name. */}
+          <img
+            src={LOGO.src}
+            width="26"
+            height="26"
+            alt=""
+            className="h-[26px] w-[26px] shrink-0 rounded-[8px] ring-1 ring-white/10"
+          />
           ClearView
         </a>
 
